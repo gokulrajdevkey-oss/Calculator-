@@ -1,0 +1,502 @@
+
+
+/* ===========================
+   Super Calculator Pro CSS
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:#101522;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:20px;
+    color:#fff;
+}
+
+/* Animated Background */
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background:linear-gradient(-45deg,#00c6ff,#0072ff,#6a11cb,#2575fc);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Calculator */
+
+.calculator{
+
+    width:380px;
+    max-width:100%;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:25px;
+
+    padding:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+}
+
+/* Header */
+
+.header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:15px;
+
+}
+
+.header h1{
+
+font-size:24px;
+
+}
+
+.header-buttons{
+
+display:flex;
+
+gap:10px;
+
+}
+
+.header button{
+
+width:45px;
+
+height:45px;
+
+border:none;
+
+border-radius:50%;
+
+cursor:pointer;
+
+font-size:20px;
+
+}
+
+/* Clock */
+
+.top-bar{
+
+display:flex;
+
+justify-content:space-between;
+
+margin-bottom:12px;
+
+font-size:14px;
+
+opacity:.9;
+
+}
+
+/* Display */
+
+.display{
+
+background:rgba(255,255,255,.12);
+
+padding:15px;
+
+border-radius:18px;
+
+margin-bottom:18px;
+
+}
+
+#history{
+
+height:22px;
+
+text-align:right;
+
+color:#ddd;
+
+font-size:15px;
+
+}
+
+#result{
+
+width:100%;
+
+border:none;
+
+outline:none;
+
+background:transparent;
+
+color:white;
+
+font-size:34px;
+
+text-align:right;
+
+}
+
+/* Buttons */
+
+.buttons{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:12px;
+
+}
+
+.buttons button{
+
+height:62px;
+
+border:none;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.15);
+
+color:white;
+
+font-size:22px;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+.buttons button:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 0 18px cyan;
+
+}
+
+.buttons button:active{
+
+transform:scale(.92);
+
+}
+
+/* History */
+
+.history-panel{
+
+width:380px;
+
+max-width:100%;
+
+margin-top:20px;
+
+padding:18px;
+
+border-radius:20px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(15px);
+
+}
+
+.history-panel h2{
+
+margin-bottom:10px;
+
+}
+
+#historyList{
+
+display:flex;
+
+flex-direction:column;
+
+gap:8px;
+
+max-height:180px;
+
+overflow:auto;
+
+}
+
+.history-item{
+
+padding:10px;
+
+border-radius:10px;
+
+background:rgba(255,255,255,.10);
+
+cursor:pointer;
+
+}
+
+#clearHistory{
+
+margin-top:12px;
+
+width:100%;
+
+height:45px;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+}
+
+/* Popup */
+
+.popup{
+
+display:none;
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.5);
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.popup-box{
+
+background:white;
+
+color:black;
+
+width:300px;
+
+padding:20px;
+
+border-radius:18px;
+
+}
+
+.popup-box h2{
+
+margin-bottom:15px;
+
+}
+
+.popup-box label{
+
+display:block;
+
+margin:12px 0;
+
+}
+
+.popup-box button{
+
+margin-top:15px;
+
+width:100%;
+
+height:42px;
+
+border:none;
+
+border-radius:10px;
+
+cursor:pointer;
+
+}
+
+/* Light Theme */
+
+body.light{
+
+background:#eeeeee;
+
+color:black;
+
+}
+
+body.light #result{
+
+color:black;
+
+}
+
+body.light .calculator,
+body.light .history-panel{
+
+background:rgba(255,255,255,.75);
+
+}
+
+/* Mobile */
+
+@media(max-width:480px){
+
+.calculator,
+.history-panel{
+
+width:100%;
+
+}
+
+.buttons button{
+
+height:58px;
+
+font-size:20px;
+
+}
+
+#result{
+
+font-size:28px;
+
+}
+
+}
+/* Bottom Navigation */
+
+.bottom-nav{
+
+position:fixed;
+
+bottom:0;
+
+left:0;
+
+width:100%;
+
+height:75px;
+
+background:rgba(20,20,30,.85);
+
+backdrop-filter:blur(15px);
+
+display:flex;
+
+justify-content:space-around;
+
+align-items:center;
+
+}
+
+.nav-btn{
+
+background:none;
+
+border:none;
+
+color:white;
+
+font-size:14px;
+
+cursor:pointer;
+
+}
+
+.nav-btn.active{
+
+color:#00ffff;
+
+font-weight:bold;
+
+
+}
+/* Converter Page */
+
+.page{
+
+width:380px;
+
+max-width:100%;
+
+margin-top:20px;
+
+padding:20px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(15px);
+
+border-radius:20px;
+
+}
+
+.page h2{
+
+margin-bottom:15px;
+
+}
+
+.page select,
+.page input{
+
+width:100%;
+
+height:45px;
+
+margin-bottom:15px;
+
+border:none;
+
+border-radius:10px;
+
+padding:10px;
+
+}
+
+.page button{
+
+width:100%;
+
+height:45px;
+
+border:none;
+
+border-radius:10px;
+
+cursor:pointer;
+
+font-size:18px;
+
+}
+
+#converterResult{
+
+margin-top:20px;
+
+text-align:center;
+
+}
