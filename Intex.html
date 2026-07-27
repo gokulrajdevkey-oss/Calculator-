@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Super Calculator Pro</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- Animated Background -->
+<div class="background"></div>
+
+<!-- Calculator -->
+<div class="calculator">
+
+    <!-- Header -->
+    <div class="header">
+
+        <h1>🧮 Super Calculator</h1>
+
+        <div class="header-buttons">
+
+            <button id="themeBtn">🌙</button>
+
+            <button id="settingsBtn">⚙️</button>
+
+        </div>
+
+    </div>
+
+    <!-- Clock -->
+    <div class="top-bar">
+
+        <span id="liveDate"></span>
+
+        <span id="liveClock"></span>
+
+    </div>
+
+    <!-- Display -->
+    <div class="display">
+
+        <div id="history"></div>
+
+        <input
+            id="result"
+            type="text"
+            readonly
+            placeholder="0">
+
+    </div>
+
+    <!-- Buttons -->
+
+    <div class="buttons">
+
+        <!-- Row 1 -->
+
+        <button>MC</button>
+        <button>MR</button>
+        <button>M+</button>
+        <button>M-</button>
+
+        <!-- Row 2 -->
+
+        <button>(</button>
+        <button>)</button>
+        <button>%</button>
+        <button>C</button>
+
+        <!-- Row 3 -->
+
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>÷</button>
+
+        <!-- Row 4 -->
+
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>×</button>
+
+        <!-- Row 5 -->
+
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>-</button>
+
+        <!-- Row 6 -->
+
+        <button>0</button>
+        <button>.</button>
+        <button>=</button>
+        <button>+</button>
+
+        <!-- Scientific -->
+
+        <button>π</button>
+        <button>√</button>
+        <button>sin</button>
+        <button>cos</button>
+
+        <button>tan</button>
+        <button>log</button>
+        <button>⌫</button>
+        <button>00</button>
+
+    </div>
+
+</div>
+
+<!-- History Panel -->
+
+<div class="history-panel">
+
+<h2>History</h2>
+
+<div id="historyList"></div>
+
+<button id="clearHistory">
+
+Clear History
+
+</button>
+
+</div>
+
+<!-- Settings Popup -->
+
+<div class="popup" id="settingsPopup">
+
+<div class="popup-box">
+
+<h2>Settings</h2>
+
+<label>
+
+<input type="checkbox" id="soundToggle">
+
+Sound
+
+</label>
+
+<label>
+
+<input type="checkbox" id="vibrationToggle">
+
+Vibration
+
+</label>
+
+<button id="closePopup">
+
+Close
+
+</button>
+
+</div>
+
+</div>
+<!-- Converter Page -->
+
+
+<div id="converterPage" class="page" style="display:none;">
+
+    <h2>🔄 Unit Converter</h2>
+
+    <select id="converterType">
+        <option value="length">📏 Length</option>
+<option value="weight">⚖️ Weight</option>
+<option value="temperature">🌡️ Temperature</option>
+<option value="area">🟩 Area</option>
+<option value="volume">🧪 Volume</option>
+<option value="speed">🚗 Speed</option>
+<option value="data">💾 Data Storage</option>
+<option value="time">⏰ Time</option>
+<option value="currency">💱 Currency</option>
+    </select>
+
+    <input
+        type="number"
+        id="converterInput"
+        placeholder="Enter Value">
+        
+        <select id="fromUnit">
+</select>
+
+<select id="toUnit">
+</select>
+
+<button id="swapBtn">🔄 Swap Units</button>
+
+    <button id="convertBtn">
+        Convert
+    </button>
+    <button id="swapBtn">🔄 Swap Units</button>
+
+    <h3 id="converterResult">
+        Result
+    </h3>
+
+</div>
+<!-- Bottom Navigation -->
+
+<div class="bottom-nav">
+
+<button class="nav-btn active">🧮<br>Calc</button>
+
+<button class="nav-btn">💱<br>Convert</button>
+
+<button class="nav-btn">📅<br>Age</button>
+
+<button class="nav-btn">⚙️<br>More</button>
+
+</div>
+
+<script src="history.js"></script>
+<script src="settings.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
